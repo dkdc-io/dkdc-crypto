@@ -15,7 +15,7 @@ KEY_LENGTH = 1 << 6  # length of the derived key
 
 SALT_SIZE = KEY_LENGTH
 PEPPER_SIZE = KEY_LENGTH
-CAYENNE = ("dkdc" * (1 << 3)).encode()
+CAYENNE = "dkdc" * (1 << 3)
 
 
 def generate_salt() -> bytes:
@@ -27,8 +27,8 @@ def generate_pepper() -> bytes:
 
 
 def get_cayenne() -> bytes:
-    cayenne = env.get("CAYENNE")
-    return cayenne.encode() if cayenne else CAYENNE
+    cayenne = env.get("CAYENNE") or CAYENNE
+    return cayenne.encode()
 
 
 def xor(a: bytes, b: bytes) -> bytes:

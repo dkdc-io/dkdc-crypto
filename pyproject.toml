@@ -1,6 +1,6 @@
 [project]
 name = "dkdc-crypto"
-version = "0.0.1"
+version = "0.0.2"
 authors = [{ name = "Cody", email = "cody@dkdc.dev" }]
 description = "web9 tech for the masses"
 readme = "readme.md"
